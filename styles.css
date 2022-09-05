@@ -29,3 +29,10 @@ body {
     grid-row: -2 / -1;
     background-color: rgb(116, 116, 176);
 }
+
+.card {
+    background-color: red;
+    height: fit-content;
+    width: fit-content;
+    border: solid green 1px;
+}

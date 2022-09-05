@@ -1,0 +1,29 @@
+/* books stored in array */
+
+/* constructor function (made in previous
+    lesson) will be used to create each
+    book object */
+
+/* a new function (addBook) will be created 
+    to add
+    a new book to the library, calling on
+    the constructor function within in */
+
+/* a form will be displayed upon the
+    calling of this function for the user
+    to fill in details of a new book */
+
+/* the details will then need to be 'posted'
+    and pushed into the array */
+
+/* the array will need to be displayed
+    in the content area, showing each 
+    book object created and its details */
+
+/* DOM manipulation will be required to:
+    - detect when an 'add' button is clicked
+        to call the addBook function
+            /eventListener/
+    - cause the input form to appear
+    - display the array (i.e.) library 
+        on screen */
