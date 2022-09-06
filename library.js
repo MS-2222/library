@@ -1,13 +1,13 @@
 let myArray = [{
-    title: 'book1',
-    author: 'author1',
-    pages: 312,
+    title: 'A Tale of Two Cities',
+    author: 'Charles Dickens',
+    pages: 448,
     read: 'Not Read'
 },
 {
-    title: 'book2',
-    author: 'author2',
-    pages: 243,
+    title: 'The Hobbit',
+    author: 'J.R.R. Tolkien',
+    pages: 310,
     read: 'Read'
 }];
 
@@ -16,8 +16,8 @@ myArray.forEach(book => {
     let card = document.createElement('div')
     card.className = 'card'
     card.textContent = `Title: ${book.title}
-    Author: ${book.author}
-    Pages: ${book.pages}
-    Status: ${book.read}`
+Author: ${book.author}
+Pages: ${book.pages}
+Status: ${book.read}`
     content.appendChild(card)
 });
