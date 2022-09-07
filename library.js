@@ -33,3 +33,12 @@ Status: ${book.read}`
 });
 
 //function to add book objects to library
+let submit = document.querySelector('#addBook');
+submit.addEventListener('click', () => {
+    let title = document.querySelector('[name="title"]').value;
+    let author = document.querySelector('[name="author"]').value;
+    let pages = document.querySelector('[name="pages"]').value;
+    let read = document.querySelector('[name="status"]').value;
+    let newBook = new Book(title, author, pages, read);
+    myArray.push(newBook);
+})
