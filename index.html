@@ -10,7 +10,17 @@
 </head>
 <body>
     <div class="header">Header</div>
-    <div class="content"></div>
+    <div class="content">
+        <form action="post">
+            <input type="text" name="title" placeholder="Title">
+            <input type="text" name="author" placeholder="Author">
+            <input type="text" name="pages" placeholder="Pages">
+            <label for="read">Read</label>
+            <input type="radio" name="status" value="Read" id="read">
+            <label for="not-read">Not Read</label>
+            <input type="radio" name="status" value="Not Read" id="not-read">
+        </form>
+    </div>
     <div class="footer">Footer</div>
 </body>
 </html>
