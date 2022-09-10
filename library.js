@@ -12,6 +12,8 @@ let myArray = [{
     read: 'Read'
 }];
 
+arrayLoop();
+
 //constructor for book objects
 function Book(title, author, pages, read) {
     this.title = title
@@ -21,6 +23,7 @@ function Book(title, author, pages, read) {
 }
 
 //function to loop through array and display contents
+function arrayLoop() {
 myArray.forEach(book => {
     let content = document.querySelector('.content')
     let card = document.createElement('div')
@@ -31,14 +34,17 @@ Pages: ${book.pages}
 Status: ${book.read}`
     content.appendChild(card)
 });
+};
 
 //function to add book objects to library
-let submit = document.querySelector('#addBook');
+let submit = document.querySelector('button');
 submit.addEventListener('click', () => {
-    let title = document.querySelector('[name="title"]').value;
-    let author = document.querySelector('[name="author"]').value;
-    let pages = document.querySelector('[name="pages"]').value;
-    let read = document.querySelector('[name="status"]').value;
+    let title = document.getElementById('title').value
+    let author = document.getElementById('author').value
+    let pages = document.getElementById('pages').value
+    let read = document.getElementById('status').value
     let newBook = new Book(title, author, pages, read);
     myArray.push(newBook);
 })
+
+console.log(myArray);
