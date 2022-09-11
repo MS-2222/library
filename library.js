@@ -30,7 +30,8 @@ function arrayLoop() {
     myArray.forEach(book => {
         let card = document.createElement('div')
         card.className = 'card'
-        card.textContent = `Title: ${book.title}
+        card.textContent = 
+        `Title: ${book.title} 
         Author: ${book.author}
         Pages: ${book.pages}
         Status: ${book.read}`

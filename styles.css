@@ -14,6 +14,9 @@ body {
     grid-column: 1;
     grid-row: 1;
     background-color: rgb(116, 116, 176);
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
 }
 
 .form {
@@ -21,6 +24,8 @@ body {
     grid-column: 1;
     grid-row: 2;
     background-color: rgb(193, 193, 215);
+    justify-content: center;
+    align-items: center;
 }
 
 .content {
@@ -36,14 +41,17 @@ body {
     grid-column: 1;
     grid-row: -2 / -1;
     background-color: rgb(116, 116, 176);
+    justify-content: center;
+    align-items: center;
 }
 
 .card {
     background-color: rgb(46, 153, 186);
-    height: fit-content;
-    width: fit-content;
+    height: 200px;
+    width: 300px;
     border: solid blue 2px;
     border-radius: 5px;
     white-space: pre-wrap;
     margin: 10px;
+    text-align: left;
 }
