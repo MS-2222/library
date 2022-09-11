@@ -4,7 +4,7 @@ body {
     width: 100vw;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 2fr 7fr 1fr;
+    grid-template-rows: 2fr 1fr 7fr 1fr;
     margin: 0;
     
 }
@@ -16,9 +16,16 @@ body {
     background-color: rgb(116, 116, 176);
 }
 
+.form {
+    display: grid;
+    grid-column: 1;
+    grid-row: 2;
+    background-color: rgb(193, 193, 215);
+}
+
 .content {
     grid-column: 1;
-    grid-row: 2 / -2;
+    grid-row: 3 / -2;
     background-color: rgb(193, 193, 215);
     display: flex;
     padding: 30px;
