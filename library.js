@@ -1,16 +1,17 @@
 
 let myArray = [];
-let emptyArray = [];
+let idCount = 0;
 
 let content = document.querySelector('.content')
 arrayLoop();
 
 //constructor for book objects
-function Book(title, author, pages, read) {
+function Book(title, author, pages, read, idNum) {
     this.title = title
     this.author = author
     this.pages = pages
     this.read = read
+    this.idNum = idNum
 }
 
 //function to loop through array and display contents
@@ -38,10 +39,12 @@ submit.addEventListener('click', () => {
     let author = document.getElementById('author').value
     let pages = document.getElementById('pages').value
     let read = document.getElementById('status').value
-    let newBook = new Book(title, author, pages, read);
+    let idNum = idCount
+    let newBook = new Book(title, author, pages, read, idNum);
     myArray.push(newBook);
     content.innerHTML = ''
     arrayLoop()
+    idCount++
 })
 
 console.log(myArray);
