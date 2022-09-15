@@ -1,17 +1,5 @@
-//array containing book objects
-let myArray = [{
-    title: 'A Tale of Two Cities',
-    author: 'Charles Dickens',
-    pages: 448,
-    read: 'Not Read'
-},
-{
-    title: 'The Hobbit',
-    author: 'J.R.R. Tolkien',
-    pages: 310,
-    read: 'Read'
-}];
 
+let myArray = [];
 let emptyArray = [];
 
 let content = document.querySelector('.content')
@@ -35,12 +23,16 @@ function arrayLoop() {
         Author: ${book.author}
         Pages: ${book.pages}
         Status: ${book.read}`
+        let delButton = document.createElement('button')
+        delButton.className = 'delButton'
+        delButton.textContent = 'Delete'
+        card.appendChild(delButton)
         content.appendChild(card)
     });
 };
 
 //function to add book objects to library
-let submit = document.querySelector('button');
+let submit = document.querySelector('#addBook');
 submit.addEventListener('click', () => {
     let title = document.getElementById('title').value
     let author = document.getElementById('author').value
