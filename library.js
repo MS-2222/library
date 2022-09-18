@@ -26,6 +26,7 @@ function arrayLoop() {
         Status: ${book.read}`
         let delButton = document.createElement('button')
         delButton.className = 'delButton'
+        delButton.id = `${book.idNum}`
         delButton.textContent = 'Delete'
         card.appendChild(delButton)
         content.appendChild(card)
@@ -45,6 +46,21 @@ submit.addEventListener('click', () => {
     content.innerHTML = ''
     arrayLoop()
     idCount++
+})
+
+//function to delete book objects from array
+let delNodes = document.querySelectorAll('.delButton')
+delButtons = Array.from(delNodes)
+delButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+        let buttonNum = this.id
+        myArray.forEach(book => {
+            if(book.idNum === buttonNum) {
+                myArray.splice(book)
+            }
+
+        })
+    })
 })
 
 console.log(myArray);
