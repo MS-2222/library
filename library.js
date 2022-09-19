@@ -45,22 +45,26 @@ submit.addEventListener('click', () => {
     myArray.push(newBook);
     content.innerHTML = ''
     arrayLoop()
+    delButton()
     idCount++
 })
 
 //function to delete book objects from array
-let delNodes = document.querySelectorAll('.delButton')
-delButtons = Array.from(delNodes)
-delButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
-        let buttonNum = this.id
-        myArray.forEach(book => {
-            if(book.idNum === buttonNum) {
-                myArray.splice(book)
-            }
-
+function delButton() {
+    let delNodes = document.querySelectorAll('.delButton');
+    let delButtons = Array.from(delNodes)
+    delButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            let number = (this.id)
+            let index = myArray.findIndex(Book => Book.idNum == number)
+            myArray.splice(index, 1)
+            content.innerHTML = ''
+            arrayLoop()
+            delButton()
         })
     })
-})
+}
+
+
 
 console.log(myArray);
