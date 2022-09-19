@@ -30,6 +30,7 @@ function arrayLoop() {
         delButton.textContent = 'Delete'
         card.appendChild(delButton)
         content.appendChild(card)
+        delButton()
     });
 };
 
@@ -64,7 +65,3 @@ function delButton() {
         })
     })
 }
-
-
-
-console.log(myArray);
