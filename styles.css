@@ -26,6 +26,12 @@ body {
     background-color: rgb(193, 193, 215);
     justify-content: center;
     align-items: center;
+    border: solid rgb(116, 116, 176) 2px;
+}
+
+form input, select, button {
+    border: solid rgb(116, 116, 176) 2px;
+    border-radius: 5px;
 }
 
 .content {
@@ -46,14 +52,20 @@ body {
 }
 
 .card {
-    background-color: rgb(46, 153, 186);
+    background-color: white;
     height: 200px;
     width: 300px;
-    border: solid blue 2px;
-    border-radius: 5px;
+    border: solid rgb(116, 116, 176) 2px;
+    border-radius: 20px;
     white-space: pre-wrap;
     margin: 10px;
-    text-align: left;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.8rem;
+    padding-top: 10px;
 }
 
 .delButton {
@@ -63,4 +75,5 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
 }

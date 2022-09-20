@@ -19,18 +19,13 @@ function arrayLoop() {
     myArray.forEach(book => {
         let card = document.createElement('div')
         card.className = 'card'
-        card.textContent = 
-        `Title: ${book.title} 
-        Author: ${book.author}
-        Pages: ${book.pages}
-        Status: ${book.read}`
+        card.innerHTML = `${book.title}\n ${book.author}\n ${book.pages} pages\n ${book.read}`
         let delButton = document.createElement('button')
         delButton.className = 'delButton'
         delButton.id = `${book.idNum}`
-        delButton.textContent = 'Delete'
+        delButton.innerHTML = 'Delete'
         card.appendChild(delButton)
         content.appendChild(card)
-        delButton()
     });
 };
 
