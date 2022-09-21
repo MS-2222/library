@@ -19,7 +19,18 @@ function arrayLoop() {
     myArray.forEach(book => {
         let card = document.createElement('div')
         card.className = 'card'
-        card.innerHTML = `${book.title}\n ${book.author}\n ${book.pages} pages\n ${book.read}`
+        card.innerHTML = `${book.title}\n ${book.author}\n ${book.pages}`
+        let readButton = document.createElement('button')
+        if(book.read === 'Read') {
+            readButton.innerHTML = 'Read'
+            readButton.style.backgroundColor = 'green';
+        }
+        else if(book.read === 'Not Read') {
+            readButton.innerHTML = 'Not Read'
+            readButton.style.backgroundColor = 'red'
+        }
+        readButton.className = 'readButton'
+        card.appendChild(readButton)
         let delButton = document.createElement('button')
         delButton.className = 'delButton'
         delButton.id = `${book.idNum}`
@@ -41,6 +52,7 @@ submit.addEventListener('click', () => {
     myArray.push(newBook);
     content.innerHTML = ''
     arrayLoop()
+    readToggle()
     delButton()
     idCount++
 })
@@ -57,6 +69,24 @@ function delButton() {
             content.innerHTML = ''
             arrayLoop()
             delButton()
+            readToggle()
+        })
+    })
+}
+
+function readToggle() {
+    let readNodes = document.querySelectorAll('.readButton')
+    let readButtons = Array.from(readNodes)
+    readButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            if(button.innerHTML === 'Read') {
+                button.innerHTML = 'Not Read'
+                button.style.backgroundColor = 'red'
+            }
+            else if(button.innerHTML === 'Not Read') {
+                button.innerHTML = 'Read'
+                button.style.backgroundColor = 'green'
+            }
         })
     })
 }
