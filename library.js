@@ -19,7 +19,7 @@ function arrayLoop() {
     myArray.forEach(book => {
         let card = document.createElement('div')
         card.className = 'card'
-        card.innerHTML = `${book.title}\n ${book.author}\n ${book.pages}`
+        card.innerHTML = `${book.title}\n ${book.author}\n ${book.pages} pages`
         let readButton = document.createElement('button')
         if(book.read === 'Read') {
             readButton.innerHTML = 'Read'
@@ -30,6 +30,7 @@ function arrayLoop() {
             readButton.style.backgroundColor = 'red'
         }
         readButton.className = 'readButton'
+        readButton.id = `${book.idNum}`
         card.appendChild(readButton)
         let delButton = document.createElement('button')
         delButton.className = 'delButton'
@@ -78,14 +79,18 @@ function readToggle() {
     let readNodes = document.querySelectorAll('.readButton')
     let readButtons = Array.from(readNodes)
     readButtons.forEach(button => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', function(e) {
+            let number = (this.id)
+            let index = myArray.findIndex(Book => Book.idNum == number)
             if(button.innerHTML === 'Read') {
                 button.innerHTML = 'Not Read'
                 button.style.backgroundColor = 'red'
+                myArray[index].read = 'Not Read'
             }
             else if(button.innerHTML === 'Not Read') {
                 button.innerHTML = 'Read'
                 button.style.backgroundColor = 'green'
+                myArray[index].read = 'Read'
             }
         })
     })
